@@ -15,7 +15,7 @@ use warnings;
 use 5.006;
 use base qw(XML::API);
 
-our $VERSION = 0.01;
+our $VERSION = 0.02;
 
 my $m_wix_dir = "C:/Program Files/Windows Installer XML v2/doc";
 my $xsd = "$m_wix_dir/wix.xsd";

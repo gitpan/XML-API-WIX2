@@ -31,14 +31,19 @@ $wix_dir =~ s#\\#/#g;
 $wix_dir =~ s#//#/#g;
 
 # Check that the wix.xsd file exists in that directory.
-opendir (DIR, $wix_dir) or
-	die "Error: Cannot open directory \"$wix_dir\" for reading: $!\n";
-my @files = grep { m#^wix\.xsd$#i } readdir(DIR);
-closedir DIR;
-
-if ($#files == 1)
+my @files;
+if (-d $wix_dir)
 {
-	die "Error: wix.xsd not found in passed directory.\n";
+	opendir (DIR, $wix_dir) or
+		die "Error: Cannot open directory \"$wix_dir\" for reading: $!\n";
+	@files = grep { m#^wix\.xsd$#i } readdir(DIR);
+	closedir DIR;
+}
+
+if ($#files != 1)
+{
+	warn "Warning: wix.xsd not found in passed directory.\n";
+	warn "         This module may not work as expected.\n";
 }
 
 open (FILE, "<lib/XML/API/WIX2.pm") or

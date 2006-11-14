@@ -1,11 +1,10 @@
-This is the README file for Software::Packager::Solaris.
-This is Alpha software it may or may not do anything. The API is subject to
-change. 
-This module comes with NO WARRANTY.
+This is the README file for XML::API::WIX2
 
 INSTALLATION
-Software::Packager::Solaris uses the standard perl module install process
-It requires Software::Packager
+XML::API::WIX2 uses the standard perl module install process
+This module requires
+XML::API
+WiX (Windows Installer XML) version 2
 
 perl Makefile.PL
 make
@@ -13,14 +12,12 @@ make test [TEST_VERBOSE=1] (optional but recommended)
 make install
 
 DESCRIPTION
-Software::Packager::Solaris extends Software::packager providing the ability
-to create packages for the Solaris platform.
+################################################################################
+XML::API::WIX2 extends XML::API providing the ability to create Windows
+Installer XML source files for use with Version 2 of WiX
 
-This module does not do the packaging of the software but is merely a wrapper
-around the various software packaging tools already provided with the Solaris
-operating system.
-
-For more details see the documentation on Software::Packager
+The WiX (Windows Installer XML) Toolset can be obtained from
+http://wix.sourceforge.net
 
 AUTHOR
 R Bernard Davison <rbdavison@cpan.org>
